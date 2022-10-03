@@ -3,17 +3,18 @@
 package main
 
 import (
-	"github.com/zh-five/xdaemon"
 	"log"
 	"os"
 	"time"
+
+	"github.com/zh-five/xdaemon"
 )
 
 func main() {
-	logFile := "daemon.log"
+	//logFile := "daemon.log"
 
 	//启动一个子进程后主程序退出
-	xdaemon.Background(logFile, true)
+	xdaemon.Background(os.Stdout, true)
 
 	//以下代码只有子程序会执行
 	log.Println(os.Getpid(), "start...")
