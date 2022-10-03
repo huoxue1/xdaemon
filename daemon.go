@@ -138,6 +138,7 @@ func startProc(args, env []string, logFile io.Writer) (*exec.Cmd, error) {
 
 	cmd.Stderr = logFile
 	cmd.Stdout = logFile
+	cmd.Stdin = os.Stdin
 
 	err := cmd.Start()
 	if err != nil {
